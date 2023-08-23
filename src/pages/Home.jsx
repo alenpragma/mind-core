@@ -1,5 +1,5 @@
 import React from 'react'
-import RightSidebar from "../components/home/RightSidebar"
+import RightSidebar from "../components/pages/home"
 
 
 const Home = () => {
