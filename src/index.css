@@ -9,6 +9,7 @@
 *{
   font-family:  'Bricolage Grotesque', sans-serif !important;
 }
+/* selection */
 *::selection{
   background-color: white;
   color: black !important;
@@ -33,4 +34,27 @@
   100% {
     background-position: -200% center;
   }
+}
+
+/* scrollbar design */
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1b6;
+  border-radius: 5px; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
