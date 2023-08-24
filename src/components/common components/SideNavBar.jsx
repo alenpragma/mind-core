@@ -77,9 +77,11 @@ const SideNavBar = () => {
     {/* side navbar Starts */}
     <div
       className={`${
-        !expand ? "w-[25%]" : "w-[7%]"
-      } h-[100vh] fixed text-white rleative duration-300`}
+        !expand ? "w-[20%]" : "w-[7%]"
+      } h-[100vh] fixed text-white rleative duration-300 `}
+    
     >
+
       <div
         className="absolute inset-0 bg-cover bg-center "
         style={{
@@ -102,7 +104,7 @@ const SideNavBar = () => {
             !expand ? "justify-between" : "justify-center"
           }  items-center`}
         >
-          <h3 className="flex items-center mb-0 p-0 gap-x-2">
+          <h5 className="flex items-center mb-0 p-0 gap-x-2">
             {" "}
             {!expand && (
               <img
@@ -112,26 +114,26 @@ const SideNavBar = () => {
               />
             )}{" "}
             {!expand && "MINDCHAIN"}
-          </h3>
+          </h5>
 
           <div
-            className="p-2 text-[30px] rounded-full glass-container  "
+            className="p-2 text-[30px] rounded-full glass-container  duration-100 hover:text-colorprimary "
             onClick={handleExpand}
           >
             <TbArrowBadgeRight
-              className={`duration-500 ${!expand ? "rotate-[-180deg]" : ""}`}
+              className={`duration-500 ${!expand ? "rotate-[-180deg]" : ""} duration-100 hover:text-colorprimary `}
             />
           </div>
         </div>
         {/* nav items start from here */}
         <div className=" h-[65%] flex flex-col gap-y-3 rounded-md overflow-y-scroll mt-3">
           {navData.map((item, index) => (
-            <div key={index}>
+            <div key={index} >
               <div
-                className="p-3 text-[20px] relative flex items-center gap-x-2 glass-container rounded-md  cursor-pointer"
+                className="p-3 text-[18px] relative flex items-center duration-100 hover:text-colorprimary gap-x-2 glass-container rounded-md  cursor-pointer"
                 onClick={() => toggleDropdown(index)}
               >
-                <span className="text-[30px]">{item.icon}</span>{" "}
+                <span className="text-[25px]">{item.icon}</span>{" "}
                 <span>{!expand && item.name}</span>{" "}
                 {item.dropdownItems && !expand && (
                   <FaChevronDown
@@ -144,7 +146,7 @@ const SideNavBar = () => {
               {expandedDropdown[index] && item.dropdownItems && !expand && (
                 <div className="flex flex-col gap-y-3 pl-5 mt-3">
                   {item.dropdownItems.map((subItem, subIndex) => (
-                    <div key={subIndex}>{subItem.name}</div>
+                    <div key={subIndex} className="duration-100 hover:text-colorprimary cursor-pointer">{subItem.name}</div>
                   ))}
                 </div>
               )}
@@ -155,12 +157,12 @@ const SideNavBar = () => {
     </div>
     {/* side navbar ends */}
 
-    {/* main navbar starts */}
-    <div  className={` duration-300  fixed top-0 w-[75%]  right-0 ${!expand ? "w-[75%]":"w-[93%] "} h-[100vh] overflow-y-scroll`}>
+    {/* all contents starts */}
+    <div  className={` duration-300  fixed top-0    right-0 ${!expand ? "w-[80%]":"w-[93%] "} h-[100vh] overflow-y-scroll`}>
       <div 
        className="absolute inset-0 bg-cover bg-center "
        style={{
-         backgroundImage: "url('https://saamarketing.co.uk/wp-content/uploads/2022/08/The-Different-Types-of-Technology-GIF.gif')",
+         backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfiJxnu-E9PhWyXf2q_-_ZV5hfHNJxY17Wv2bfgU1Ko-299TzRUYRrbMDQpfxemx4OBCE&usqp=CAU')",
        }}
       ></div>
       <div className="glass-container w-full h-full absolute"></div>
@@ -168,7 +170,7 @@ const SideNavBar = () => {
       <Outlet/>
     
     </div>
-    {/* main navbar ends */}
+    {/* all contents ends */}
     </>
   );
 };
