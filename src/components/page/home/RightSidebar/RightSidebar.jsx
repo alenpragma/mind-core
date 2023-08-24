@@ -6,11 +6,10 @@ import {FaFingerprint} from "react-icons/fa"
 
 const RightSidebar = () => {
   
-  const [toggleSide, setToggleSide] = useState(false)
 
   return (
     <aside className=''>
-        <div className={`absolute bottom-[20%] right-[20px] hello w-[110px] rounded glass-container ${toggleSide ? "w-[150px]" : ""}`}>
+        <div className="absolute bottom-4 right-4 hello w-[110px] rounded glass-container">
             <div className="right-sidebar text-white w-[100%] ">
                 <div className="right-sidebar__item flex flex-col gap-[15px] py-[20px] px-[30px] ">
                   <div className='text-center flex flex-col items-center'>
