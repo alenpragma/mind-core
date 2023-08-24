@@ -50,7 +50,7 @@ const Navbar = () => {
       <div className="w-full flex items-center justify-between glass-container px-3 py-2 text-white">
         <h3 className="mb-0">Portfolio</h3>
         <div className="relative w-[30%]">
-          <div className="absolute left-4 top-[50%] transform -translate-y-1/2 text-[#fff7] pointer-events-none">
+          <div className="absolute left-4 top-[50%] transform -translate-y-1/2 text-[#ffffff93] pointer-events-none">
             {inputFocused || inputValue ? null : (
               <div className="flex items-center gap-x-2">
                 <RiSearchEyeLine className="text-[25px]" />{" "}
@@ -89,7 +89,7 @@ const Navbar = () => {
         <div
           onClick={toggleDropdown}
           ref={dropdownRef}
-          className="pl-2 pr-3 py-2 rounded-full glass-container group flex items-center gap-x-2 relative cursor-pointer"
+          className="pl-2 pr-3 py-2 rounded-full glass-container group flex items-center gap-x-2 relative z-50 cursor-pointer"
         >
           <img
             src="https://scontent.fdac20-1.fna.fbcdn.net/v/t39.30808-1/351458758_6686132011431682_2799385172923958613_n.jpg?stp=dst-jpg_p720x720&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeG2wRAijHM5xYsi770jXwGJrJY4yaj8sjisljjJqPyyOIuSC9QBBvPYLNCekWoYPvRpSPDKtEqirFONGr3chcpT&_nc_ohc=SDbju6sk42wAX-sdHcs&_nc_ht=scontent.fdac20-1.fna&oh=00_AfDPkI_5i3tBI4_1Fe8oYZgQTog4VJZtTzyqAJ0IhvKYsQ&oe=64EBE67A"
@@ -103,7 +103,7 @@ const Navbar = () => {
             } duration-100 group-hover:text-colorprimary `}
           />
           {dropDownShow && (
-            <div className="absolute z-10 w-full glass-container bottom-[-190px] py-2 px-3  rounded-md left-0">
+            <div className="absolute !z-50 w-full glass-container bottom-[-190px] py-2 px-3  rounded-md left-0">
               <ul className="m-0 p-0 flex flex-col ">
                 <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
                   <CgProfile /> Profile
