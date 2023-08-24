@@ -156,10 +156,17 @@ const SideNavBar = () => {
     {/* side navbar ends */}
 
     {/* main navbar starts */}
-    <div  className={`bg-red-500 duration-300  fixed top-0 w-[75%]  right-0 ${!expand ? "w-[75%]":"w-[93%] "} h-[100vh]`}>
+    <div  className={` duration-300  fixed top-0 w-[75%]  right-0 ${!expand ? "w-[75%]":"w-[93%] "} h-[100vh] overflow-y-scroll`}>
+      <div 
+       className="absolute inset-0 bg-cover bg-center "
+       style={{
+         backgroundImage: "url('https://saamarketing.co.uk/wp-content/uploads/2022/08/The-Different-Types-of-Technology-GIF.gif')",
+       }}
+      ></div>
+      <div className="glass-container w-full h-full absolute"></div>
       <Navbar/>
       <Outlet/>
-     
+    
     </div>
     {/* main navbar ends */}
     </>
