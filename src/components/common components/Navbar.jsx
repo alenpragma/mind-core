@@ -115,7 +115,7 @@ const Navbar = () => {
                   <GiWallet /> Wallet Setting
                 </li>
                 <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
-                  <BiLogOutCircle /> Logout
+                  <BiLogOutCircle  /> Logout
                 </li>
               </ul>
             </div>
