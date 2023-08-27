@@ -50,11 +50,11 @@ const Navbar = () => {
       <div className="w-full flex items-center justify-between glass-container px-3 py-2 text-white">
         <h3 className="mb-0">Portfolio</h3>
         <div className="relative w-[30%]">
-          <div className="absolute left-4 top-[50%] transform -translate-y-1/2 text-[#ffffff93] pointer-events-none">
+          <div className="absolute left-4 top-[50%] transform -translate-y-1/2 text-[#ffffff93] pointer-events-none z-1">
             {inputFocused || inputValue ? null : (
               <div className="flex items-center gap-x-2">
                 <RiSearchEyeLine className="text-[25px]" />{" "}
-                <TypeAnimation
+                <TypeAnimation 
                   sequence={[
                     "Search Projects",
                     1000,
