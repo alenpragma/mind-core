@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { RiSearchEyeLine } from "react-icons/ri";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaHamburger } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlinePayment } from "react-icons/md";
 import { GiWallet } from "react-icons/gi";
@@ -45,12 +45,14 @@ const Navbar = () => {
     };
   }, []);
 
+
   return (
     <>
       <div className="w-full flex items-center justify-between glass-container px-3 py-2 text-white">
-        <h3 className="mb-0">Portfolio</h3>
-        <div className="relative w-[30%]">
-          <div className="absolute left-4 top-[50%] transform -translate-y-1/2 text-[#ffffff93] pointer-events-none">
+        <div className=""></div>
+        {/* <h3 className="mb-0">Portfolio</h3> */}
+        <div className="relative w-[350px]">
+          <div className="absolute left-4  top-[50%] transform -translate-y-1/2 text-[#ffffff93] pointer-events-none">
             {inputFocused || inputValue ? null : (
               <div className="flex items-center gap-x-2">
                 <RiSearchEyeLine className="text-[25px]" />{" "}
