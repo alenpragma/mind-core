@@ -4,12 +4,14 @@ import {BsFillSendFill} from "react-icons/bs"
 import {BsQrCodeScan} from "react-icons/bs"
 import {FaFingerprint} from "react-icons/fa"
  import{PiCurrencyBtcBold} from "react-icons/pi"
- import{AiOutlineArrowRight} from "react-icons/ai"
+ import{BiChevronsRight} from "react-icons/bi"
 
  import Col from 'react-bootstrap/Col';
  import Nav from 'react-bootstrap/Nav';
  import Row from 'react-bootstrap/Row';
  import Tab from 'react-bootstrap/Tab';
+
+ import "./index.css"
 
 
 const RightSidebar = () => {
@@ -51,9 +53,12 @@ const RightSidebar = () => {
             }
             {toggleTab ?
             <div className="">
-              <AiOutlineArrowRight onClick={()=>setToggleTab(!toggleTab)} />
+                <div className="text-white text-[25px] py-[20px] ml-2">
+                <BiChevronsRight onClick={()=>setToggleTab(!toggleTab)} className='text-white cursor-pointer' />
+                </div>
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                           <div className="">
+                          
                           <Nav variant="pills" className="">
                             <Nav.Item className=''>
                               <Nav.Link eventKey="first">
@@ -90,10 +95,18 @@ const RightSidebar = () => {
                         
                         <Col >
                           <Tab.Content>
-                            <Tab.Pane eventKey="first">first tab content</Tab.Pane>
-                            <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
-                            <Tab.Pane eventKey="third">third tab content</Tab.Pane>
-                            <Tab.Pane eventKey="fourth">Second tab content</Tab.Pane>
+                            <Tab.Pane eventKey="first" className='text-center text-white'>
+                              <p>Continue with…</p>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="second" className='text-center text-white'>
+                              <p>Continue with…</p>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="third" className='text-center text-white'>
+                            <p>Continue with…</p>
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="fourth" className='text-center text-white'>
+                            <p>Continue with…</p>
+                            </Tab.Pane>
                           </Tab.Content>
                         </Col>
                     
