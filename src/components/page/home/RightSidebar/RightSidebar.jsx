@@ -28,7 +28,7 @@ const RightSidebar = () => {
             <div className="right-sidebar text-white w-[100%] ">
               
                 <div className="right-sidebar__item flex flex-col gap-[15px] py-[15px] px-[10px] ">
-                  <Link onClick={()=>setToggleTab(!toggleTab)} className='text-center flex flex-col items-center no-underline text-[#fff] hover:text-colorprimary duration-100'>
+                  <Link onClick={()=>setToggleTab(!toggleTab)} className={`${toggleTab ? "duration-500" : ""} text-center flex flex-col items-center no-underline text-[#fff] hover:text-colorprimary duration-100`}>
                       <span className=" bg-[#fff3] relative w-[50px] h-[50px] rounded-full cursor-pointer flex justify-center items-center">
                       <BsFillSendFill className=' text-[25px] flex justify-center' />
                       </span>
