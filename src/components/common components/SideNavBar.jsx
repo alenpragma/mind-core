@@ -154,7 +154,7 @@ isSmallScreen == true &&
             <div className="" >
               <FaHamburger
                 onClick={hamBurger}
-                className="absolute top-[1.5rem] right-[-60px] duration-100 hover:text-colorprimary  text-[30px]"
+                className="absolute top-[1.3rem] right-[-60px] duration-100 hover:text-colorprimary  text-[30px]"
                 style={{ zIndex: "99999999999" }}
               />
             </div>
