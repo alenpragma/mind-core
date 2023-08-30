@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import {BsFillSendFill} from "react-icons/bs"
-import {BsQrCodeScan} from "react-icons/bs"
-import {FaFingerprint} from "react-icons/fa"
- import{PiCurrencyBtcBold} from "react-icons/pi"
- import{BiChevronsRight} from "react-icons/bi"
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import {BsFillSendFill} from "react-icons/bs";
+import {BsQrCodeScan} from "react-icons/bs";
+import {FaFingerprint} from "react-icons/fa";
+ import{PiCurrencyBtcBold} from "react-icons/pi";
+ import{BiChevronsRight} from "react-icons/bi";
+ import{BsPlusLg} from "react-icons/bs";
 
  import Col from 'react-bootstrap/Col';
  import Nav from 'react-bootstrap/Nav';
@@ -20,12 +21,13 @@ const RightSidebar = () => {
 
   return (
     <aside className=''>
-      {/* transact open button start*/}
+      <button className='absolute top-[20%] right-[15px]  translate-y-[-20%] text-white glass-container  rounded-full p-[15px] md:hidden block' onClick={()=>setToggleTab(!toggleTab)}><BsPlusLg className='text-[25px]' /></button>      {/* transact open button start*/}
       {/* <div  className="fixed bottom-[10px] right-4 text-white flex items-center gap-x-1 text-[20px] font-semibold p-2 rounded-lg glass-container duration-100 group  cursor-pointer"><PiCurrencyBtcBold className='text-[25px] group-hover:text-colorprimary duration-100'/><span className='group-hover:text-colorprimary duration-100'>Transact</span> </div> */}
       {/* transact open button end */}
-        <div className={`fixed z-10 bottom-[70px] right-4  duration-300   hello rounded glass-container`}>
+        <div className={`absolute top-[20%] md:top-[50%] right-[15px] ranslate-y-[20%] md:translate-y-[-50%]  t  duration-300 rounded glass-container`}>
+        
         {!toggleTab &&
-            <div className="right-sidebar text-white w-[100%] ">
+            <div className="right-sidebar text-white w-[100%] hidden md:block">
               
                 <div className="right-sidebar__item flex flex-col gap-[15px] py-[15px] px-[10px] ">
                   <Link onClick={()=>setToggleTab(!toggleTab)} className={`${toggleTab ? "duration-500" : ""} text-center flex flex-col items-center no-underline text-[#fff] hover:text-colorprimary duration-100`}>
