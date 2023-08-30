@@ -9,50 +9,78 @@ import {
   FaInfoCircle,
 } from "react-icons/fa";
 import { TbArrowBadgeRight } from "react-icons/tb";
-import { useDispatch, useSelector } from "react-redux";
-import { activeSideNav } from "../../Slices/SideNavToggleSlice";
+
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 
 const navData = [
-  { icon: <FaHome />, name: "Home" },
+  { icon: <FaHome />, name: "Dashboard", link: "home" },
   {
     icon: <FaCubes />,
-    name: "Products",
+    name: "Farming",
     dropdownItems: [
-      { name: "Product 1" },
-      { name: "Product 2" },
-      { name: "Product 3" },
+      { name: "Buy Farming", link: "buyFarming" },
+      { name: "My Asset", link: "myAsset" },
     ],
   },
-  { icon: <FaInfoCircle />, name: "About" },
   {
     icon: <FaBriefcase />,
-    name: "Services",
-    dropdownItems: [{ name: "Service 1" }, { name: "Service 2" }],
+    name: "Earn MIND",
+    dropdownItems: [
+      { name: "MIND Staking", link: "mindstaking" },
+      { name: "MIND Staking History", link: "mindStakingHistory" },
+    ],
   },
-  { icon: <FaHome />, name: "Home" },
+  {
+    icon: <FaBriefcase />,
+    name: "Earn MUSD",
+    dropdownItems: [
+      { name: "MUSD Staking", link: "musdstaking" },
+      { name: "MUSD Staking History", link: "musdStakingHistory" },
+    ],
+  },
+  { icon: <FaHome />, name: "Become A Merchant" },
   {
     icon: <FaCubes />,
-    name: "Products",
+    name: "Affiliate",
+    dropdownItems: [{ name: "My Affiliate" }, { name: "Add Affiliate" }],
+  },
+  {
+    icon: <FaCubes />,
+    name: "Wallet",
     dropdownItems: [
-      { name: "Product 1" },
-      { name: "Product 2" },
-      { name: "Product 3" },
+      { name: "Deposit USD" },
+      { name: "Deposit MIND" },
+      { name: "Withdraw Cash Fund" },
+      { name: "WithDraw Coin" },
+      { name: "Transfer Fund" },
+      { name: "Transfer Coin" },
+      { name: "Transaction Report" },
     ],
   },
-  { icon: <FaInfoCircle />, name: "About" },
+  { icon: <FaInfoCircle />, name: "KYC Verification" },
   {
     icon: <FaBriefcase />,
-    name: "Services",
-    dropdownItems: [{ name: "Service 1" }, { name: "Service 2" }],
+    name: "B.W. Trans. History",
+    dropdownItems: [
+      { name: "Affiliate Bonus History" },
+      { name: "Daily Seller Bonus History" },
+      { name: "Daily Bonus History" },
+      { name: "Daily Staking History" },
+      { name: "Level Bonus History" },
+      { name: "Token Sett. History" },
+      { name: "Transfer History" },
+      { name: "Withdraw History" },
+      { name: "Other Transaction" },
+      
+    ],
   },
+  { icon: <FaInfoCircle />, name: "White paper" },
+  { icon: <FaInfoCircle />, name: "Explorer" },
+
 ];
 
 const SideNavBar = () => {
-  let sideNavToggleData = useSelector((state) => state);
-
-  let disp = useDispatch();
   const [expandedDropdown, setExpandedDropdown] = useState({});
 
   const toggleDropdown = (index) => {
@@ -66,14 +94,13 @@ const SideNavBar = () => {
   let [expand, setExpand] = useState(false);
   let handleExpand = async () => {
     setExpand((prev) => !prev);
-    disp(activeSideNav(expand));
   };
 
   // responsive hamburger toggle
   let [hamBurgerShow, setHamBurgerShow] = useState(false);
 
   let hamBurger = () => {
-    setHamBurgerShow((prev)=>!prev)
+    setHamBurgerShow((prev) => !prev);
   };
 
   // responsive detect
@@ -149,16 +176,15 @@ const SideNavBar = () => {
                 />
               </div>
             )}
-            {
-isSmallScreen == true &&
-            <div className="" >
-              <FaHamburger
-                onClick={hamBurger}
-                className="absolute top-[1.3rem] right-[-60px] duration-100 hover:text-colorprimary  text-[30px]"
-                style={{ zIndex: "99999999999" }}
-              />
-            </div>
-            }
+            {isSmallScreen == true && (
+              <div className="">
+                <FaHamburger
+                  onClick={hamBurger}
+                  className="absolute top-[1.3rem] right-[-60px] duration-100 hover:text-colorprimary  text-[30px]"
+                  style={{ zIndex: "99999999999" }}
+                />
+              </div>
+            )}
           </div>
 
           {/* nav items start from here */}
@@ -166,7 +192,7 @@ isSmallScreen == true &&
             {navData.map((item, index) => (
               <div key={index}>
                 <div
-                  className="p-3 text-[18px] relative flex items-center duration-100 hover:text-colorprimary gap-x-2 glass-container rounded-md  cursor-pointer"
+                  className="p-3 text-[16px] relative flex items-center duration-100 hover:text-colorprimary gap-x-2 glass-container rounded-md  cursor-pointer"
                   onClick={() => toggleDropdown(index)}
                 >
                   <span className="text-[25px]">{item.icon}</span>{" "}

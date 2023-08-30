@@ -73,14 +73,14 @@ const Navbar = () => {
             className="pl-2 pr-3 py-2 rounded-full glass-container text-sm md:text-md lg:text-lg group flex items-center gap-x-2 relative z-50 cursor-pointer"
           >
             <img src="" className="w-[40px] h-[40px] rounded-full" alt="" />
-            <p className="m-0 group-hover:text-colorprimary">Hamza Altamas</p>
+            <p className="m-0 text-[16px] group-hover:text-colorprimary">Hamza Altamas</p>
             <FaChevronDown
               className={`text-[14px] ${
                 dropDownShow ? "transform rotate-180" : ""
               } duration-100 group-hover:text-colorprimary `}
             />
             {dropDownShow && (
-              <div className="absolute !z-50 w-full glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-210px] py-2 px-3  rounded-md left-0">
+              <div className="absolute !z-50 w-full text-[16px] glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-210px] py-2 px-3  rounded-md left-0">
                 <ul className="m-0 p-0 flex flex-col ">
                   <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
                     <CgProfile /> Profile

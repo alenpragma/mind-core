@@ -32,19 +32,19 @@ const RightSidebar = () => {
                       <span className=" bg-[#fff3] relative w-[50px] h-[50px] rounded-full cursor-pointer flex justify-center items-center">
                       <BsFillSendFill className=' text-[25px] flex justify-center' />
                       </span>
-                    <p className='text-[18px] pt-[10px] m-0'>Send</p>
+                    <p className='text-[16px] pt-[10px] m-0'>Send</p>
                   </Link>
                   <Link onClick={()=>setToggleTab(!toggleTab)}  className='text-center no-underline flex flex-col items-center text-[#fff] hover:text-colorprimary duration-100'>
                       <div className=" bg-[#fff3] relative w-[50px] h-[50px] rounded-full cursor-pointer flex justify-center items-center">
                       <BsQrCodeScan className=' text-[25px]' />
                       </div>
-                      <p className='text-[18px] pt-[10px] m-0'>Receive</p>
+                      <p className='text-[16px] pt-[10px] m-0'>Receive</p>
                   </Link>
                   <Link onClick={()=>setToggleTab(!toggleTab)}  className='text-center no-underline flex flex-col items-center text-[#fff] hover:text-colorprimary duration-100'>
                       <div className=" bg-[#fff3] relative w-[50px] h-[50px] rounded-full cursor-pointer flex justify-center items-center">
                       <FaFingerprint className=' text-[25px]' />
                       </div>
-                      <p className='text-[18px] pt-[10px] m-0'>Bridge</p>
+                      <p className='text-[16px] pt-[10px] m-0'>Bridge</p>
                   </Link>
                  
                 </div>

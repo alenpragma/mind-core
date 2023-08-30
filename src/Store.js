@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import sideNavSlice from "./Slices/SideNavToggleSlice";
+// import { configureStore } from "@reduxjs/toolkit";
+// import sideNavSlice from "./Slices/SideNavToggleSlice";
 
-export const store = configureStore({
-  reducer: {
-    sideNav: sideNavSlice,
-  },
-});
+// export const store = configureStore({
+//   reducer: {
+//     sideNav: sideNavSlice,
+//   },
+// });

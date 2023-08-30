@@ -19,7 +19,7 @@ const TypedSearchBar = () => {
 
   return (
     <div>
-      <div className="relative w-[100%] ">
+      <div className="relative w-[100%] text-[16px]">
         <div className="absolute left-4 top-[50%] transform -translate-y-1/2 text-[#ffffff93] pointer-events-none z-1">
           {inputFocused || inputValue ? null : (
             <div className="flex items-center gap-x-2">
