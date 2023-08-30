@@ -2,3 +2,21 @@
 	background-color: #fff3 !important;
     color: #B45FBD  !important;
 }
+
+/* .animation-box {
+    animation: slide 1s infinite !important;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%) !important;
+    }
+    50% {
+        transform: translateX(110%) !important;
+    }
+    
+    100% {
+        transform: translateX(0%) !important;
+    }
+} */
+

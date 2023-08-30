@@ -9,11 +9,18 @@
 *{
   font-family:  'Bricolage Grotesque', sans-serif !important;
 }
+
+body {
+  overflow-x: hidden !important;
+}
+
 /* selection */
 *::selection{
   background-color: white;
   color: black !important;
 }
+
+
 
 /* glass blur effect container */
 .glass-container {
@@ -35,6 +42,7 @@
     background-position: -200% center;
   }
 }
+
 
 /* scrollbar design */
 /* width */

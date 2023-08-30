@@ -19,16 +19,18 @@ const RightSidebar = () => {
   // let [show,setShow] = useState(false)
   const [toggleTab, setToggleTab] = useState()
 
+  // const handleClick {
+    
+  // }
+
   return (
     <aside className=''>
-      <button className='absolute top-[20%] right-[15px]  translate-y-[-20%] text-white glass-container  rounded-full p-[15px] md:hidden block' onClick={()=>setToggleTab(!toggleTab)}><BsPlusLg className='text-[25px]' /></button>      {/* transact open button start*/}
+      <button className='absolute bottom-[20%] right-[15px]  translate-y-[-20%] text-white glass-container  rounded-full p-[15px] md:hidden block' onClick={()=>setToggleTab(!toggleTab)}><BsPlusLg className='text-[25px]' /></button>      {/* transact open button start*/}
       {/* <div  className="fixed bottom-[10px] right-4 text-white flex items-center gap-x-1 text-[20px] font-semibold p-2 rounded-lg glass-container duration-100 group  cursor-pointer"><PiCurrencyBtcBold className='text-[25px] group-hover:text-colorprimary duration-100'/><span className='group-hover:text-colorprimary duration-100'>Transact</span> </div> */}
       {/* transact open button end */}
-        <div className={`absolute top-[20%] md:top-[50%] right-[15px] ranslate-y-[20%] md:translate-y-[-50%]  t  duration-300 rounded glass-container`}>
-        
-        {!toggleTab &&
+        <div className={`absolute bottom-[15%] md:bottom-[5%] right-[15px] translate-y-[15%] md:translate-y-[-5%]  duration-300 rounded glass-container`}>
             <div className="right-sidebar text-white w-[100%] hidden md:block">
-              
+              {!toggleTab &&
                 <div className="right-sidebar__item flex flex-col gap-[15px] py-[15px] px-[10px] ">
                   <Link onClick={()=>setToggleTab(!toggleTab)} className={`${toggleTab ? "duration-500" : ""} text-center flex flex-col items-center no-underline text-[#fff] hover:text-colorprimary duration-100`}>
                       <span className=" bg-[#fff3] relative w-[50px] h-[50px] rounded-full cursor-pointer flex justify-center items-center">
@@ -50,17 +52,17 @@ const RightSidebar = () => {
                   </Link>
                  
                 </div>
-              
+              }
             </div>
-            }
-            {toggleTab ?
-            <div className="">
-                <div className="text-white text-[25px] py-[20px] ml-2">
+        </div>
+        {toggleTab ?
+            <div className="absolute bottom-[15%] md:bottom-[5%] right-[15px] translate-y-[15%] md:translate-y-[-5%] glass-container animation-box">
+                <div className="text-white text-[25px] py-[20px] ml-2 ">
                 <BiChevronsRight onClick={()=>setToggleTab(!toggleTab)} className='text-white cursor-pointer' />
                 </div>
-                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                <Tab.Container id="left-tabs-example" className="" defaultActiveKey="first">
                           <div className="">
-                          
+                        
                           <Nav variant="pills" className="">
                             <Nav.Item className=''>
                               <Nav.Link eventKey="first">
@@ -116,7 +118,6 @@ const RightSidebar = () => {
               </div>
               : ""
               }
-        </div>
     </aside>
   )
 }
