@@ -58,7 +58,7 @@ const RightSidebar = () => {
             </div>
         </div>
         {toggleTab ?
-            <div className="absolute bottom-[20px] md:bottom-[5%] right-[15px] translate-y-[20px] md:translate-y-[-5%] glass-container animation-box">
+            <div className={` absolute bottom-[20px] md:bottom-[5%] right-[15px]  translate-y-[20px] md:translate-y-[-5%] glass-container animation-box duration-300`}>
                 <div className="text-white text-[25px] py-[20px] ml-2 ">
                 <BiChevronsRight onClick={()=>setToggleTab(!toggleTab)} className='text-white cursor-pointer' />
                 </div>
