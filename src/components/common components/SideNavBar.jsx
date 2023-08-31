@@ -231,13 +231,13 @@ const SideNavBar = () => {
         } ${isSmallScreen && "!w-[100%]"} h-[100vh] overflow-y-scroll`}
       >
         <div
-          className="absolute inset-0 bg-cover bg-center "
+          className="absolute inset-0 bg-cover bg-center z-[-1]"
           style={{
             backgroundImage:
               "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfiJxnu-E9PhWyXf2q_-_ZV5hfHNJxY17Wv2bfgU1Ko-299TzRUYRrbMDQpfxemx4OBCE&usqp=CAU')",
           }}
         ></div>
-        <div className="glass-container w-full h-full absolute"></div>
+        <div className="glass-container w-full h-full absolute z-[-1]"></div>
         <Navbar />
         <Outlet />
       </div>
