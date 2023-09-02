@@ -1,4 +1,6 @@
 import React from "react";
+import { BiCopyAlt } from "react-icons/bi";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { FiRefreshCw } from "react-icons/fi";
 
 const ProfileHeroImages = () => {
@@ -25,11 +27,11 @@ const ProfileHeroImages = () => {
                 alt=""
               />
               {/* username start */}
-              <div className="absolute right-[-150px] top-9  lg:right-[-210px] lg:top-[80px] mt-3 font-bold">
-                <p className="m-0 text-white text-[18px] md:text-[22px] lg:text-[25px]">
-                  {" "}
+              <div className="absolute right-[-170px] top-9  lg:right-[-240px] lg:top-[80px] mt-3 font-bold">
+                <p className="m-0 text-white text-[18px] md:text-[22px] lg:text-[30px]">
                   @hamzaaltamas
                 </p>
+                <p className=" flex text-white items-center gap-x-2 text-[15px] md:text-[18px] lg:text-[20px]"><img src="	https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="" className="w-[20px] h-[20px] rounded-full" /> 0xf9C…5876 <BiCopyAlt className="duration-200 hover:text-colorprimary"/> <BsThreeDotsVertical className="duration-200 hover:text-colorprimary"/></p>
               </div>
               {/* username end */}
             </div>

@@ -74,7 +74,7 @@ const Navbar = ({width}) => {
               ref={dropdownRef}
               className="pl-2 pr-3 py-2 rounded-full glass-container text-sm md:text-md lg:text-lg group flex items-center gap-x-2 relative z-50 cursor-pointer"
             >
-              <img src="" className="w-[40px] h-[40px] rounded-full" alt="" />
+              <img src="https://i.postimg.cc/vmrCsgks/249258182-2975620919365412-8646170426615816778-n.jpg" className="w-[40px] h-[40px] rounded-full" alt="" />
               <p className="m-0 text-[16px] group-hover:text-colorprimary">
                 Hamza 
               </p>
@@ -108,7 +108,7 @@ const Navbar = ({width}) => {
 
       <div
         className={`w-[100%] p-3 text-white translate-y-[-300px] duration-200  ${
-          searcBarShow ? "translate-y-[0px]" : "translate-y-[-300px]"
+          searcBarShow ? "translate-y-[100px]" : "translate-y-[-300px]"
         }`}
       >
         <TypedSearchBar />
