@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  FaAffiliatetheme,
   FaAlignRight,
   FaBriefcase,
   FaChevronDown,
@@ -7,16 +8,29 @@ import {
   FaHamburger,
   FaHome,
   FaInfoCircle,
+  FaRegCompass,
+  FaRegHandshake,
 } from "react-icons/fa";
 import { TbArrowBadgeRight } from "react-icons/tb";
-
+import { FiHome, FiUsers } from "react-icons/fi";
+import { NavLink, Outlet } from "react-router-dom"; // Import NavLink from React Router
+import {
+  PiArrowsDownUpBold,
+  PiNewspaperBold,
+  PiSquaresFourLight,
+  PiSwap,
+  PiWalletBold,
+} from "react-icons/pi";
+import { GiCoins, GiCoinsPile } from "react-icons/gi";
+import { GrTransaction } from "react-icons/gr";
+import { MdDomainVerification } from "react-icons/md";
+import { BsTelephone } from "react-icons/bs";
 import Navbar from "./Navbar";
-import { Outlet } from "react-router-dom";
 
 const navData = [
-  { icon: <FaHome />, name: "Dashboard", link: "home" },
+  { icon: <FiHome />, name: "Dashboard", link: "home" },
   {
-    icon: <FaCubes />,
+    icon: <PiSquaresFourLight />,
     name: "Farming",
     dropdownItems: [
       { name: "Buy Farming", link: "buyFarming" },
@@ -24,7 +38,7 @@ const navData = [
     ],
   },
   {
-    icon: <FaBriefcase />,
+    icon: <GiCoins />,
     name: "Earn MIND",
     dropdownItems: [
       { name: "MIND Staking", link: "mindstaking" },
@@ -32,56 +46,65 @@ const navData = [
     ],
   },
   {
-    icon: <FaBriefcase />,
+    icon: <GiCoinsPile />,
     name: "Earn MUSD",
     dropdownItems: [
       { name: "MUSD Staking", link: "musdstaking" },
       { name: "MUSD Staking History", link: "musdStakingHistory" },
     ],
   },
-  { icon: <FaHome />, name: "Become A Merchant" },
+  { icon: <FaRegHandshake />, name: "Become A Merchant", link: "merchant" },
   {
-    icon: <FaCubes />,
+    icon: <FaAffiliatetheme />,
     name: "Affiliate",
-    dropdownItems: [{ name: "My Affiliate" }, { name: "Add Affiliate" }],
+    dropdownItems: [
+      { name: "My Affiliate", link: "myAffiliate" },
+      { name: "Add Affiliate", link: "addAffiliate" },
+    ],
   },
   {
-    icon: <FaCubes />,
+    icon: <PiWalletBold />,
     name: "Wallet",
     dropdownItems: [
-      { name: "Deposit USD" },
-      { name: "Deposit MIND" },
-      { name: "Withdraw Cash Fund" },
-      { name: "WithDraw Coin" },
-      { name: "Transfer Fund" },
-      { name: "Transfer Coin" },
-      { name: "Transaction Report" },
+      { name: "Deposit USD", link: "depositUSD" },
+      { name: "Deposit MIND", link: "depositMIND" },
+      { name: "Withdraw Cash Fund", link: "withdrawCashFund" },
+      { name: "WithDraw Coin", link: "withdrawCoin" },
+      { name: "Transfer Fund", link: "transferFund" },
+      { name: "Transfer Coin", link: "transferCoin" },
+      { name: "Transaction Report", link: "transactionReport" },
     ],
   },
-  { icon: <FaInfoCircle />, name: "KYC Verification" },
   {
-    icon: <FaBriefcase />,
+    icon: <MdDomainVerification />,
+    name: "KYC Verification",
+    link: "kycVerification",
+  },
+  {
+    icon: <PiArrowsDownUpBold />,
     name: "B.W. Trans. History",
     dropdownItems: [
-      { name: "Affiliate Bonus History" },
-      { name: "Daily Seller Bonus History" },
-      { name: "Daily Bonus History" },
-      { name: "Daily Staking History" },
-      { name: "Level Bonus History" },
-      { name: "Token Sett. History" },
-      { name: "Transfer History" },
-      { name: "Withdraw History" },
-      { name: "Other Transaction" },
-      
+      { name: "Affiliate Bonus History", link: "affiliateBonusHistory" },
+      { name: "Daily Seller Bonus History", link: "dailySellerBonusHistory" },
+      { name: "Daily Bonus History", link: "dailyBonusHistory" },
+      { name: "Daily Staking History", link: "dailyStakingHistory" },
+      { name: "Level Bonus History", link: "levelBonusHistory" },
+      { name: "Token Sett. History", link: "tokenSettlementHistory" },
+      { name: "Transfer History", link: "transferHistory" },
+      { name: "Withdraw History", link: "withdrawHistory" },
+      { name: "Other Transaction", link: "otherTransaction" },
     ],
   },
-  { icon: <FaInfoCircle />, name: "White paper" },
-  { icon: <FaInfoCircle />, name: "Explorer" },
-
+  { icon: <BsTelephone />, name: "Contact Us", link: "contactUs" },
+  { icon: <PiSwap />, name: "Swap", link: "swap" },
+  { icon: <FiUsers />, name: "Ambassador", link: "ambassador" },
+  { icon: <PiNewspaperBold />, name: "White paper", link: "whitePaper" },
+  { icon: <FaRegCompass />, name: "Explorer", link: "explorer" },
 ];
 
 const SideNavBar = () => {
   const [expandedDropdown, setExpandedDropdown] = useState({});
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleDropdown = (index) => {
     setExpandedDropdown((prevState) => ({
@@ -90,20 +113,17 @@ const SideNavBar = () => {
     }));
   };
 
-  //    navbar expand functionality
   let [expand, setExpand] = useState(false);
   let handleExpand = async () => {
     setExpand((prev) => !prev);
   };
 
-  // responsive hamburger toggle
   let [hamBurgerShow, setHamBurgerShow] = useState(false);
 
   let hamBurger = () => {
     setHamBurgerShow((prev) => !prev);
   };
 
-  // responsive detect
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -118,8 +138,6 @@ const SideNavBar = () => {
 
   return (
     <>
-      {/* side navbar Starts */}
-
       <div
         className={`${
           !expand ? "w-[20%]" : "w-[7%]"
@@ -136,15 +154,6 @@ const SideNavBar = () => {
 
         <div className="absolute glass-container w-full h-full"></div>
         <div className="relative h-full p-3">
-          {/* Your content here */}
-          {/* {expand && (
-            <img
-              src="https://i.postimg.cc/wTNbsthM/image.png"
-              className="w-[40px] h-[40px]"
-              alt=""
-            />
-          )} */}
-
           <div
             className={`flex ${
               !expand ? "justify-between" : "justify-center"
@@ -187,19 +196,24 @@ const SideNavBar = () => {
             )}
           </div>
 
-          {/* nav items start from here */}
           <div className=" h-[65%] flex flex-col gap-y-3 rounded-md overflow-y-scroll mt-3">
             {navData.map((item, index) => (
               <div key={index}>
+                {/* Main menu item */}
                 <div
-                  className="p-3 text-[16px] relative flex items-center duration-100 hover:text-colorprimary gap-x-2 glass-container rounded-md  cursor-pointer"
-                  onClick={() => toggleDropdown(index)}
+                  className={`p-3 text-[16px] relative flex items-center duration-100 hover:text-colorprimary gap-x-2 glass-container rounded-md  cursor-pointer ${
+                    expandedDropdown[index] ? "active-class-name" : ""
+                  }`}
+                  onClick={() => {
+                    toggleDropdown(index);
+                    setActiveIndex(null); // Reset activeIndex when main menu item is clicked
+                  }}
                 >
                   <span className="text-[25px]">{item.icon}</span>{" "}
                   <span>{!expand && item.name}</span>{" "}
                   {item.dropdownItems && !expand && (
                     <FaChevronDown
-                      className={`justify-self-end absolute right-4 ${
+                      className={`justify-self-end absolute duration-300 right-4 ${
                         expandedDropdown[index] ? "rotate-180" : ""
                       }`}
                     />
@@ -208,12 +222,15 @@ const SideNavBar = () => {
                 {expandedDropdown[index] && item.dropdownItems && !expand && (
                   <div className="flex flex-col gap-y-3 pl-5 mt-3">
                     {item.dropdownItems.map((subItem, subIndex) => (
-                      <div
+                      // Dropdown items with NavLink
+                      <NavLink
                         key={subIndex}
-                        className="duration-100 hover:text-colorprimary cursor-pointer"
+                        to={subItem.link}
+                        className=" hover:!text-colorprimary cursor-pointer duration-300 !text-white "
+                        activeClassName="active-link-class-name" // Add your active link class name
                       >
                         {subItem.name}
-                      </div>
+                      </NavLink>
                     ))}
                   </div>
                 )}
@@ -222,9 +239,7 @@ const SideNavBar = () => {
           </div>
         </div>
       </div>
-      {/* side navbar ends */}
 
-      {/* all contents starts */}
       <div
         className={` duration-300  fixed top-0  z-[-1]  right-0 ${
           !expand ? "w-[80%]" : "w-[93%] "
@@ -238,10 +253,26 @@ const SideNavBar = () => {
           }}
         ></div>
         <div className="glass-container w-full h-full absolute"></div>
-        <Navbar />
+        {/* sidebar toggle blur bg start */}
+        {isSmallScreen && (
+          <div className={`w-full h-full absolute ${hamBurgerShow && "z-50"} `}>
+            {hamBurgerShow && (
+              <div
+                onClick={hamBurger}
+                className={`w-full h-full glass-container`}
+              ></div>
+            )}
+          </div>
+        )}
+        {/* sidebar toggle blur bg end*/}
+        <Navbar
+          width={`${!expand ? "w-[80%]" : "w-[93%] "} ${
+            isSmallScreen && "!w-[100%]"
+          }`}
+        />
+
         <Outlet />
       </div>
-      {/* all contents ends */}
     </>
   );
 };

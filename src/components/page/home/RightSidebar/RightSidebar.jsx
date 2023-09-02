@@ -24,13 +24,13 @@ const RightSidebar = () => {
   // }
 
   return (
-    <aside className=''>
+    <>
       <button className='absolute bottom-[20px] right-[15px]  translate-y-[-20px] text-white glass-container  rounded-full p-[15px] md:hidden block' onClick={()=>setToggleTab(!toggleTab)}>
         <BsPlusLg className='text-[25px]' />
         </button>      {/* transact open button start*/}
       {/* <div  className="fixed bottom-[10px] right-4 text-white flex items-center gap-x-1 text-[20px] font-semibold p-2 rounded-lg glass-container duration-100 group  cursor-pointer"><PiCurrencyBtcBold className='text-[25px] group-hover:text-colorprimary duration-100'/><span className='group-hover:text-colorprimary duration-100'>Transact</span> </div> */}
       {/* transact open button end */}
-        <div className={`absolute bottom-[15%] md:bottom-[5%] right-[15px] translate-y-[15%] md:translate-y-[-5%]  duration-300 rounded glass-container`}>
+        <div className={`absolute bottom-[15%] md:bottom-[5%]  right-[15px] translate-y-[15%] md:translate-y-[-5%]  duration-300 rounded glass-container`}>
             <div className="right-sidebar text-white w-[100%] hidden md:block">
               {!toggleTab &&
                 <div className="right-sidebar__item flex flex-col gap-[15px] py-[15px] px-[10px] ">
@@ -120,7 +120,7 @@ const RightSidebar = () => {
               </div>
               : ""
               }
-    </aside>
+    </>
   )
 }
 
