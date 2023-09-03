@@ -38,7 +38,7 @@ const ProfileHeroImages = () => {
           </div>
           {/* dp end */}
           {/* net worth start */}
-          <div className="p-2 rounded-md flex flex-col z-50 gap-y-2 text-right glass-container text-white m-0  absolute top-4 right-4">
+          <div className="p-2 rounded-md flex flex-col z-50 gap-y-2 text-right glass-container text-white m-0  absolute top-3 right-3">
             <p className="m-0">Net Worth</p>
             <h3 className="m-0">$00,00</h3>
             <p className="m-0  text-right flex justify-end">

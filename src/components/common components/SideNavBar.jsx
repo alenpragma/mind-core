@@ -243,7 +243,7 @@ const SideNavBar = () => {
       <div
         className={` duration-300  fixed top-0  z-[-1]  right-0 ${
           !expand ? "w-[80%]" : "w-[93%] "
-        } ${isSmallScreen && "!w-[100%]"} h-[100vh] overflow-y-scroll`}
+        } ${isSmallScreen && "!w-[100%]"} h-[100vh]  overflow-y-scroll`}
       >
         <div
           className="absolute inset-0 bg-cover bg-center "

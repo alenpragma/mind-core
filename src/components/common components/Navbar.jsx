@@ -84,7 +84,8 @@ const Navbar = ({width}) => {
                 } duration-100 group-hover:text-colorprimary `}
               />
               {dropDownShow && (
-                <div className="absolute !z-50 w-[200px] text-[16px] glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-210px] py-2 px-3 left-[-60px]  rounded-md ">
+                <div className="absolute glass-container !z-50 w-[200px] text-[16px] glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-210px] py-2 px-3 left-[-60px]  rounded-md ">
+                
                   <ul className="m-0 p-0 flex flex-col ">
                     <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
                       <CgProfile /> Profile
@@ -108,8 +109,8 @@ const Navbar = ({width}) => {
 
       <div
         className={`w-[100%] p-3 text-white translate-y-[-300px] duration-200  ${
-          searcBarShow ? "translate-y-[100px]" : "translate-y-[-300px]"
-        }`}
+          searcBarShow ? "translate-y-[70px]" : "translate-y-[-300px]"
+        } relative z-[50]`}
       >
         <TypedSearchBar />
       </div>
