@@ -84,19 +84,19 @@ const Navbar = ({width}) => {
                 } duration-100 group-hover:text-colorprimary `}
               />
               {dropDownShow && (
-                <div className="absolute glass-container !z-50 w-[200px] text-[16px] glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-210px] py-2 px-3 left-[-60px]  rounded-md ">
+                <div className="absolute bg-white shadow-lg !z-50 w-[200px] text-[16px] glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-210px] py-2 px-3 left-[-60px]  rounded-md ">
                 
                   <ul className="m-0 p-0 flex flex-col ">
-                    <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
+                    <li className=" py-2 flex gap-x-1 items-center duration-100 text-colorprimary hover:border-b">
                       <CgProfile /> Profile
-                    </li>
-                    <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
+                 </li>
+                    <li className=" py-2 flex gap-x-1 items-center duration-100 text-colorprimary hover:border-b">
                       <MdOutlinePayment /> Payment Setting
                     </li>
-                    <li className="border-b py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
+                    <li className="border-b py-2 flex gap-x-1 items-center duration-100 text-colorprimary hover:border-b">
                       <GiWallet /> Wallet Setting
                     </li>
-                    <li className=" py-2 flex gap-x-1 items-center duration-100 hover:text-colorprimary ">
+                    <li className=" py-2 flex gap-x-1 items-center duration-100 text-colorprimary hover:border-b">
                       <BiLogOutCircle /> Logout
                     </li>
                   </ul>

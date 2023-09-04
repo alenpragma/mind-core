@@ -95,7 +95,7 @@ const CoinUpdateBar = () => {
   const [isMdScreen, setIsMdScreen] = useState(false);
   useEffect(() => {
     let scrollWidt = (e) => {
-      window.innerWidth <= 991 ? setIsMdScreen(true) : setIsMdScreen(false);
+      window.innerWidth <= 1280 ? setIsMdScreen(true) : setIsMdScreen(false);
     };
     scrollWidt();
     window.addEventListener("resize", scrollWidt);
@@ -106,9 +106,9 @@ const CoinUpdateBar = () => {
   if (isSmallScreen) {
     responsiveData = coinUpdate.slice(0, 2);
   } else if (isMdScreen) {
-    responsiveData = coinUpdate.slice(0, 4);
+    responsiveData = coinUpdate.slice(0, 6);
   } else {
-    responsiveData = coinUpdate.slice(0, 5);
+    responsiveData = coinUpdate.slice(0, 8);
   }
   //   showing dropdown items according to responsive view
   const [dropdownResponsiveData, setDropdownResponsiveData] = useState([]);
@@ -123,7 +123,7 @@ const CoinUpdateBar = () => {
       // Use setDropdownResponsiveData to update the state
       setDropdownResponsiveData(coinUpdate.slice(4));
     }else{
-        setDropdownResponsiveData(coinUpdate.slice(5));
+        setDropdownResponsiveData(coinUpdate.slice(7));
 
     }
   }, [isSmallScreen, isMdScreen]);
@@ -177,7 +177,7 @@ const CoinUpdateBar = () => {
             className="m-0 text-[8px] md:text-[13px]    font-semibold group-hover:text-colorprimary duration-200 "
             style={{ lineHeight: "15px" }}
           >
-            {item.name}
+            {item.name.slice(0,3)+"..."}
             <br /> ${item.price}
           </p>
         </div>
@@ -193,19 +193,19 @@ const CoinUpdateBar = () => {
           +
         </div>
         {dropDownShow && (
-          <div className="absolute glass-container !z-50 w-[200px] text-[16px] glass-container bottom-[-180px] md:bottom-[-190px] lg:bottom-[-260px] py-2 px-3 left-[-170px]  rounded-md ">
+          <div className="absolute bg-white !z-50 w-[200px] shadow-xl text-[16px] glass-container bottom-[-180px] top-[62px] lg:bottom-[-220px] py-2 px-3 left-[-170px]  rounded-md ">
             <ul className="m-0 p-0 flex flex-col ">
               {dropdownResponsiveData &&
                 dropdownResponsiveData.map((item) => (
-                  <li className=" py-2 flex gap-x-1 justify-between items-center duration-100 hover:text-colorprimary ">
-                    <div className="flex items-center">
+                  <li className=" py-2 flex gap-x-1  justify-between items-center duration-100 text-colorprimary  hover:border-b">
+                    <di v className="flex items-center gap-x-2">
                       <img
                         src={item.image}
                         className="w-[15px] h-[15px] rounded-full "
                         alt=""
                       />
-                      {item.name}
-                    </div>
+                      {item.name.slice(0,5)+"..."}
+                    </di>
                     <div className="">${item.price}</div>
                   </li>
                 ))}
