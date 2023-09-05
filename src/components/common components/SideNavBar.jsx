@@ -239,20 +239,18 @@ const SideNavBar = () => {
           </div>
         </div>
       </div>
-
+{/* All content box */}
       <div
         className={` duration-300  fixed top-0  z-[-1]  right-0 ${
           !expand ? "w-[80%]" : "w-[93%] "
-        } ${isSmallScreen && "!w-[100%]"} h-[100vh]  overflow-y-scroll`}
+        } ${isSmallScreen && "!w-[100%]"} h-[100vh]  overflow-y-scroll  bg-cover bg-center`}
+        style={{
+          backgroundImage:
+            "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfiJxnu-E9PhWyXf2q_-_ZV5hfHNJxY17Wv2bfgU1Ko-299TzRUYRrbMDQpfxemx4OBCE&usqp=CAU')",
+        }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center "
-          style={{
-            backgroundImage:
-              "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfiJxnu-E9PhWyXf2q_-_ZV5hfHNJxY17Wv2bfgU1Ko-299TzRUYRrbMDQpfxemx4OBCE&usqp=CAU')",
-          }}
-        ></div>
-        <div className="glass-container w-full h-full absolute"></div>
+       
+        <div className="glass-container w-full h-full absolute overflow-y-scroll">
         {/* sidebar toggle blur bg start */}
         {isSmallScreen && (
           <div className={`w-full h-full absolute ${hamBurgerShow && "z-50"} `}>
@@ -272,6 +270,7 @@ const SideNavBar = () => {
         />
 
         <Outlet />
+        </div>
       </div>
     </>
   );

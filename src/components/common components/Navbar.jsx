@@ -48,7 +48,7 @@ const Navbar = ({width}) => {
 
   return (
     <>
-      <div className={`${width} glass-container fixed px-3 py-2 text-white   z-40`}>
+      <div className={`w-full ${width} glass-container fixed top-0 px-3 py-2 text-white right-0  z-40`}>
         
         <div className="w-full flex items-center justify-between  ">
           {!isSmallScreen ? (
