@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import { TbArrowBadgeRight } from "react-icons/tb";
 import { FiHome, FiUsers } from "react-icons/fi";
-import { NavLink, Outlet } from "react-router-dom"; // Import NavLink from React Router
+import { NavLink, Outlet, useNavigate } from "react-router-dom"; // Import NavLink from React Router
 import {
   PiArrowsDownUpBold,
   PiNewspaperBold,
@@ -28,7 +28,8 @@ import { BsTelephone } from "react-icons/bs";
 import Navbar from "./Navbar";
 
 const navData = [
-  { icon: <FiHome />, name: "Dashboard", link: "home" },
+  { icon: <FiHome />, name: "Dashboard", link: "/" },
+  { icon: <FiUsers />, name: "Elite Member", link: "elitemember" },
   {
     icon: <PiSquaresFourLight />,
     name: "Farming",
@@ -105,12 +106,13 @@ const navData = [
 const SideNavBar = () => {
   const [expandedDropdown, setExpandedDropdown] = useState({});
   const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleDropdown = (index) => {
+ let nav = useNavigate()
+  const toggleDropdown = (index,item) => {
     setExpandedDropdown((prevState) => ({
       ...prevState,
       [index]: !prevState[index],
     }));
+    nav(item.link)
   };
 
   let [expand, setExpand] = useState(false);
@@ -205,7 +207,7 @@ const SideNavBar = () => {
                     expandedDropdown[index] ? "active-class-name" : ""
                   }`}
                   onClick={() => {
-                    toggleDropdown(index);
+                    toggleDropdown(index,item);
                     setActiveIndex(null); // Reset activeIndex when main menu item is clicked
                   }}
                 >

@@ -7,13 +7,14 @@ import {
 } from "react-router-dom";
 
 import SideNavBar from './components/common components/SideNavBar';
-import About from './pages/About';
+
 import Home from './pages/Home';
+import BuyFarming from './pages/BuyFarming';
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<SideNavBar/>}>
     <Route index element={<Home/>}/>
-    <Route path='/about' element={<About/>}/>
+    <Route path='/buyFarming' element={<BuyFarming/>}/>
   </Route>
 ))
 
